@@ -35,72 +35,9 @@ public class Currency extends UtilityTools {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency);
 
-        // Find elements in layout
-        //====================Main View====================
-        numbersLayout = findViewById(R.id.numbersLinearLayout);
-        currencyLayout = findViewById(R.id.currencyLinearLayout);
-
-        currencyDropdown = findViewById(R.id.currencyDropdown);
-        convertField = findViewById(R.id.convertField);
-
-        numberRON = findViewById(R.id.numberRON);
-        numberEUR = findViewById(R.id.numberEUR);
-        numberUSD = findViewById(R.id.numberUSD);
-        numberGBP = findViewById(R.id.numberGBP);
-
-        //====================Currency View====================
-        buttonRON = findViewById(R.id.buttonRON);
-        buttonEUR = findViewById(R.id.buttonEUR);
-        buttonUSD = findViewById(R.id.buttonUSD);
-        buttonGBP = findViewById(R.id.buttonGBP);
-
-        //====================Numbers View====================
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
-        buttonDot = findViewById(R.id.buttonDot);
-        buttonC = findViewById(R.id.buttonC);
-        buttonOK = findViewById(R.id.buttonOK);
-
-        currencyStructTable.put(buttonRON.getText().toString().substring(2,5),new UnitStruct(1,numberRON));
-        currencyStructTable.put(buttonEUR.getText().toString().substring(2,5),new UnitStruct(1,numberEUR));
-        currencyStructTable.put(buttonUSD.getText().toString().substring(2,5),new UnitStruct(1,numberUSD));
-        currencyStructTable.put(buttonGBP.getText().toString().substring(2,5),new UnitStruct(1,numberGBP));
-
-
-        // Set functionality
-        //====================Main View====================
-        setOnClickDropdown(currencyDropdown);
-        setOnClickConvert(convertField);
-
-        //====================Currency View====================
-        setCurrencyButton(buttonRON);
-        setCurrencyButton(buttonEUR);
-        setCurrencyButton(buttonUSD);
-        setCurrencyButton(buttonGBP);
-
-        //====================Numbers View====================
-        setDigitButton(button0,convertField);
-        setDigitButton(button1,convertField);
-        setDigitButton(button2,convertField);
-        setDigitButton(button3,convertField);
-        setDigitButton(button4,convertField);
-        setDigitButton(button5,convertField);
-        setDigitButton(button6,convertField);
-        setDigitButton(button7,convertField);
-        setDigitButton(button8,convertField);
-        setDigitButton(button9,convertField);
-
-        setCButton(buttonC,convertField);
-        setDotButton(buttonDot,convertField);
-        setOKButton(buttonOK);
+        findViewsById();
+        populateStructTable();
+        setFunctionality();
     }
 
     // SETTERS and other functions
@@ -206,4 +143,75 @@ public class Currency extends UtilityTools {
         }).start();
     }
 
+    private void findViewsById() {
+        // Find elements in layout
+        //====================Main View====================
+        numbersLayout = findViewById(R.id.numbersLinearLayout);
+        currencyLayout = findViewById(R.id.currencyLinearLayout);
+
+        currencyDropdown = findViewById(R.id.currencyDropdown);
+        convertField = findViewById(R.id.convertField);
+
+        numberRON = findViewById(R.id.numberRON);
+        numberEUR = findViewById(R.id.numberEUR);
+        numberUSD = findViewById(R.id.numberUSD);
+        numberGBP = findViewById(R.id.numberGBP);
+
+        //====================Currency View====================
+        buttonRON = findViewById(R.id.buttonRON);
+        buttonEUR = findViewById(R.id.buttonEUR);
+        buttonUSD = findViewById(R.id.buttonUSD);
+        buttonGBP = findViewById(R.id.buttonGBP);
+
+        //====================Numbers View====================
+        button0 = findViewById(R.id.button0);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+        button8 = findViewById(R.id.button8);
+        button9 = findViewById(R.id.button9);
+        buttonDot = findViewById(R.id.buttonDot);
+        buttonC = findViewById(R.id.buttonC);
+        buttonOK = findViewById(R.id.buttonOK);
+    }
+
+    private void setFunctionality() {
+        // Set functionality
+        //====================Main View====================
+        setOnClickDropdown(currencyDropdown);
+        setOnClickConvert(convertField);
+
+        //====================Currency View====================
+        setCurrencyButton(buttonRON);
+        setCurrencyButton(buttonEUR);
+        setCurrencyButton(buttonUSD);
+        setCurrencyButton(buttonGBP);
+
+        //====================Numbers View====================
+        setDigitButton(button0,convertField);
+        setDigitButton(button1,convertField);
+        setDigitButton(button2,convertField);
+        setDigitButton(button3,convertField);
+        setDigitButton(button4,convertField);
+        setDigitButton(button5,convertField);
+        setDigitButton(button6,convertField);
+        setDigitButton(button7,convertField);
+        setDigitButton(button8,convertField);
+        setDigitButton(button9,convertField);
+
+        setCButton(buttonC,convertField);
+        setDotButton(buttonDot,convertField);
+        setOKButton(buttonOK);
+    }
+
+    private void populateStructTable() {
+        currencyStructTable.put(buttonRON.getText().toString().substring(2,5),new UnitStruct(1,numberRON));
+        currencyStructTable.put(buttonEUR.getText().toString().substring(2,5),new UnitStruct(1,numberEUR));
+        currencyStructTable.put(buttonUSD.getText().toString().substring(2,5),new UnitStruct(1,numberUSD));
+        currencyStructTable.put(buttonGBP.getText().toString().substring(2,5),new UnitStruct(1,numberGBP));
+    }
 }
