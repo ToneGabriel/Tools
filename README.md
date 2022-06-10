@@ -1,6 +1,6 @@
 # Tools
 
-Android project written in Java
+Calculator, Length and Currency convertor Android app written in Java
 
 Actual code is found in app/src/main:
 
