@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    tools:context=".Standard">
+
+    <TextView
+        android:id="@+id/progressField"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="0.5"
+        android:layout_columnSpan="5"
+        android:layout_columnWeight="5"
+        android:layout_margin="10dp"
+        android:gravity="center|end"
+        android:text=""
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="5"
+        android:layout_columnWeight="5"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center|end"
+        android:text="0"
+        android:autoSizeTextType="uniform"
+        android:maxLength="13"
+        android:maxLines="1" />
+
+    <Button
+        android:id="@+id/buttonE"
+        style="@style/ButtonStandard"
+        android:text="e"
+        />
+
+    <Button
+        android:id="@+id/buttonPi"
+        style="@style/ButtonStandard"
+        android:text="π"
+        />
+
+    <Button
+        android:id="@+id/buttonDEL"
+        style="@style/ButtonStandard"
+        android:text="&lt;"
+        />
+
+    <Button
+        android:id="@+id/buttonC"
+        style="@style/ButtonStandard"
+        android:layout_columnWeight="2"
+        android:layout_columnSpan="2"
+        android:text="C"
+        />
+
+    <Button
+        android:id="@+id/buttonMod"
+        style="@style/ButtonStandard"
+        android:text="mod"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/buttonSin"
+        style="@style/ButtonStandard"
+        android:text="sin"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/buttonCos"
+        style="@style/ButtonStandard"
+        android:text="cos"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/buttonTan"
+        style="@style/ButtonStandard"
+        android:text="tan"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/buttonDiv"
+        style="@style/ButtonStandard"
+        android:text="/"
+        app:backgroundTint="@color/yellow"
+        />
+
+    <Button
+        android:id="@+id/buttonRad"
+        style="@style/ButtonStandard"
+        android:text="\u221a"
+        app:backgroundTint="@color/midgrey"
+        />
+
+
+    <Button
+        android:id="@+id/button7"
+        style="@style/ButtonStandard"
+        android:text="7"
+        />
+
+    <Button
+        android:id="@+id/button8"
+        style="@style/ButtonStandard"
+        android:text="8"
+        />
+
+    <Button
+        android:id="@+id/button9"
+        style="@style/ButtonStandard"
+        android:text="9"
+        />
+
+    <Button
+        android:id="@+id/buttonMulti"
+        style="@style/ButtonStandard"
+        android:text="x"
+        app:backgroundTint="@color/yellow"
+        />
+
+    <Button
+        android:id="@+id/buttonPow"
+        style="@style/ButtonStandard"
+        android:text="^"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/ButtonStandard"
+        android:text="4"
+        />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/ButtonStandard"
+        android:text="5"
+        />
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/ButtonStandard"
+        android:text="6"
+        />
+
+    <Button
+        android:id="@+id/buttonPlus"
+        style="@style/ButtonStandard"
+        android:text="+"
+        app:backgroundTint="@color/yellow"
+        />
+
+    <Button
+        android:id="@+id/buttonLn"
+        style="@style/ButtonStandard"
+        android:text="ln"
+        app:backgroundTint="@color/midgrey"
+        />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/ButtonStandard"
+        android:text="1"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/ButtonStandard"
+        android:text="2"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/ButtonStandard"
+        android:text="3"
+        />
+
+    <Button
+        android:id="@+id/buttonMinus"
+        style="@style/ButtonStandard"
+        android:text="-"
+        app:backgroundTint="@color/yellow"
+        />
+
+    <Button
+        android:id="@+id/buttonPlusMinus"
+        style="@style/ButtonStandard"
+        android:text="+/-"
+        />
+
+    <Button
+        android:id="@+id/button0"
+        style="@style/ButtonStandard"
+        android:text="0"
+        />
+
+    <Button
+        android:id="@+id/buttonDot"
+        style="@style/ButtonStandard"
+        android:text="."
+        />
+
+    <Button
+        android:id="@+id/buttonEqual"
+        style="@style/ButtonStandard"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:text="="
+        />
+
+
+</GridLayout>

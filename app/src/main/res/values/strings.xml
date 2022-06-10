@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tools</string>
+
+    <string name="pi">3.1415926535</string>
+    <string name="e">2.7182818284</string>
+
+</resources>
