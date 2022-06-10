@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programare/Android/Tools/app/src/main/res/layout/activity_currency.xml" value="0.30027173913043476" />
+        <entry key="..\:/Programare/Android/Tools/app/src/main/res/layout/activity_length.xml" value="0.30027173913043476" />
+        <entry key="..\:/Programare/Android/Tools/app/src/main/res/layout/activity_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Programare/Android/Tools/app/src/main/res/layout/activity_standard.xml" value="0.36666666666666664" />
         <entry key="..\:/Programare/Android/Tools2/app/src/main/res/drawable/backspace.xml" value="0.2985" />
         <entry key="..\:/Programare/Android/Tools2/app/src/main/res/drawable/circle.xml" value="0.2985" />
         <entry key="..\:/Programare/Android/Tools2/app/src/main/res/layout/activity_currency.xml" value="0.358695652173913" />
