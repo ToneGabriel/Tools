@@ -1,6 +1,6 @@
 # Tools
 
-Calculator + Length and Currency converter Android app written in Java
+Calculator + Length and Currency converter Android app.
 
 Actual code is found in app/src/main:
 
