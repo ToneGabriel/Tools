@@ -26,83 +26,9 @@ public class Standard extends UtilityTools {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_standard);
 
-        // Find elements in layout
-        resultField = findViewById(R.id.resultField);
-        progressField = findViewById(R.id.progressField);
-
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
-        button2 = findViewById(R.id.button2);
-        button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.button4);
-        button5 = findViewById(R.id.button5);
-        button6 = findViewById(R.id.button6);
-        button7 = findViewById(R.id.button7);
-        button8 = findViewById(R.id.button8);
-        button9 = findViewById(R.id.button9);
-
-        buttonDEL = findViewById(R.id.buttonDEL);
-        buttonC = findViewById(R.id.buttonC);
-        buttonDot = findViewById(R.id.buttonDot);
-        buttonEqual = findViewById(R.id.buttonEqual);
-
-        buttonPlus = findViewById(R.id.buttonPlus);
-        buttonMinus = findViewById(R.id.buttonMinus);
-        buttonPlusMinus = findViewById(R.id.buttonPlusMinus);
-        buttonMulti = findViewById(R.id.buttonMulti);
-        buttonDiv = findViewById(R.id.buttonDiv);
-        buttonMod = findViewById(R.id.buttonMod);
-        buttonPow = findViewById(R.id.buttonPow);
-
-        buttonSin = findViewById(R.id.buttonSin);
-        buttonCos = findViewById(R.id.buttonCos);
-        buttonTan = findViewById(R.id.buttonTan);
-
-        buttonLn = findViewById(R.id.buttonLn);
-        buttonRad = findViewById(R.id.buttonRad);
-
-        buttonPi = findViewById(R.id.buttonPi);
-        buttonE = findViewById(R.id.buttonE);
-
-
-        // Set functionality
-        //================Numbers================
-        setDigitButton(button0,resultField);
-        setDigitButton(button1,resultField);
-        setDigitButton(button2,resultField);
-        setDigitButton(button3,resultField);
-        setDigitButton(button4,resultField);
-        setDigitButton(button5,resultField);
-        setDigitButton(button6,resultField);
-        setDigitButton(button7,resultField);
-        setDigitButton(button8,resultField);
-        setDigitButton(button9,resultField);
-        setPiButton(buttonPi,resultField);
-        setEButton(buttonE,resultField);
-        setDotButton(buttonDot,resultField);
-        setPlusMinusButton(buttonPlusMinus);
-
-        //================Binary Operators (and Equal button)================
-        setPlusButton(buttonPlus);
-        setMinusButton(buttonMinus);
-        setDivButton(buttonDiv);
-        setMultiButton(buttonMulti);
-        setModButton(buttonMod);
-        setPowButton(buttonPow);
-        setEqualButton(buttonEqual);
-
-        //================Functions================
-        setSinButton(buttonSin);
-        setCosButton(buttonCos);
-        setTanButton(buttonTan);
-        setRadButton(buttonRad);
-        setLnButton(buttonLn);
-
-        //================Delete================
-        setCButton(buttonC,resultField,progressField);
-        setDELButton(buttonDEL);
+        findViewsById();
+        setFunctionality();
     }
-
 
     // Button SETTERS
 
@@ -315,6 +241,87 @@ public class Standard extends UtilityTools {
                 }
             }
         });
+    }
+
+    @Override
+    protected void findViewsById() {
+        // Find elements in layout
+        resultField = findViewById(R.id.resultField);
+        progressField = findViewById(R.id.progressField);
+
+        button0 = findViewById(R.id.button0);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+        button8 = findViewById(R.id.button8);
+        button9 = findViewById(R.id.button9);
+
+        buttonDEL = findViewById(R.id.buttonDEL);
+        buttonC = findViewById(R.id.buttonC);
+        buttonDot = findViewById(R.id.buttonDot);
+        buttonEqual = findViewById(R.id.buttonEqual);
+
+        buttonPlus = findViewById(R.id.buttonPlus);
+        buttonMinus = findViewById(R.id.buttonMinus);
+        buttonPlusMinus = findViewById(R.id.buttonPlusMinus);
+        buttonMulti = findViewById(R.id.buttonMulti);
+        buttonDiv = findViewById(R.id.buttonDiv);
+        buttonMod = findViewById(R.id.buttonMod);
+        buttonPow = findViewById(R.id.buttonPow);
+
+        buttonSin = findViewById(R.id.buttonSin);
+        buttonCos = findViewById(R.id.buttonCos);
+        buttonTan = findViewById(R.id.buttonTan);
+
+        buttonLn = findViewById(R.id.buttonLn);
+        buttonRad = findViewById(R.id.buttonRad);
+
+        buttonPi = findViewById(R.id.buttonPi);
+        buttonE = findViewById(R.id.buttonE);
+    }
+
+    @Override
+    protected void setFunctionality() {
+        // Set functionality
+        //================Numbers================
+        setDigitButton(button0,resultField);
+        setDigitButton(button1,resultField);
+        setDigitButton(button2,resultField);
+        setDigitButton(button3,resultField);
+        setDigitButton(button4,resultField);
+        setDigitButton(button5,resultField);
+        setDigitButton(button6,resultField);
+        setDigitButton(button7,resultField);
+        setDigitButton(button8,resultField);
+        setDigitButton(button9,resultField);
+        setPiButton(buttonPi,resultField);
+        setEButton(buttonE,resultField);
+        setDotButton(buttonDot,resultField);
+        setPlusMinusButton(buttonPlusMinus);
+
+        //================Binary Operators (and Equal button)================
+        setPlusButton(buttonPlus);
+        setMinusButton(buttonMinus);
+        setDivButton(buttonDiv);
+        setMultiButton(buttonMulti);
+        setModButton(buttonMod);
+        setPowButton(buttonPow);
+        setEqualButton(buttonEqual);
+
+        //================Functions================
+        setSinButton(buttonSin);
+        setCosButton(buttonCos);
+        setTanButton(buttonTan);
+        setRadButton(buttonRad);
+        setLnButton(buttonLn);
+
+        //================Delete================
+        setCButton(buttonC,resultField,progressField);
+        setDELButton(buttonDEL);
     }
 
 }

@@ -100,7 +100,8 @@ public class Length extends UtilityTools{
         }
     }
 
-    private void findViewsById(){
+    @Override
+    protected void findViewsById(){
         // Find elements in layout
         //====================Main View====================
         numbersLayout = findViewById(R.id.numbersLinearLayout);
@@ -147,7 +148,8 @@ public class Length extends UtilityTools{
 
     }
 
-    private void setFunctionality(){
+    @Override
+    protected void setFunctionality(){
         // Set functionality
         //====================Main View====================
         setOnClickDropdown(unitsDropdown);

@@ -143,7 +143,8 @@ public class Currency extends UtilityTools {
         }).start();
     }
 
-    private void findViewsById() {
+    @Override
+    protected void findViewsById() {
         // Find elements in layout
         //====================Main View====================
         numbersLayout = findViewById(R.id.numbersLinearLayout);
@@ -179,7 +180,7 @@ public class Currency extends UtilityTools {
         buttonOK = findViewById(R.id.buttonOK);
     }
 
-    private void setFunctionality() {
+    protected void setFunctionality() {
         // Set functionality
         //====================Main View====================
         setOnClickDropdown(currencyDropdown);

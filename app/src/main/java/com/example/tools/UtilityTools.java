@@ -43,7 +43,7 @@ public class UtilityTools extends AppCompatActivity {
     public void setPiButton(Button b, TextView resultField) {
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                resultField.setText(R.string.pi);
+                resultField.setText(R.string.pi);       //TODO: check values
             }
         });
     }
@@ -141,6 +141,10 @@ public class UtilityTools extends AppCompatActivity {
         }
         return connected;
     }
+
+    protected void findViewsById() {}
+
+    protected void setFunctionality() {}
 
     public class UnitStruct {
 
