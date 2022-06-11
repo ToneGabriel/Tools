@@ -4,7 +4,4 @@
     <string name="pi">3.1415926535</string>
     <string name="e">2.7182818284</string>
 
-    <double name="defaultKilometer">0.001</double>
-
-
 </resources>
