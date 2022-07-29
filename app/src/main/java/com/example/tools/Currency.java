@@ -97,48 +97,8 @@ public class Currency extends UtilityTools {
             @Override
             public void run() {
 
-                try {
+                tryConvert();
 
-                    // Check connection
-                    if(isInternetConnected(currencyLayout.getContext()))
-                    {
-                        double number = 0;
-                        double number_RON = 0;
-                        String unit_choice = currencyDropdown.getText().toString().substring(2,5);
-
-                        Document doc = Jsoup.connect("https://www.bnr.ro/curs_mobil.aspx").get();   // IOException
-                        Elements tds = doc.select("td");
-
-                        // Update default currency unit
-                        for (Element td : tds)
-                            for(Map.Entry<String,UnitStruct> entry: currencyStructTable.entrySet())
-                                if(td.text().contains(entry.getKey()))
-                                {
-                                    entry.getValue().DefaultUnit = Double.parseDouble(td.nextElementSibling().text());
-                                    break;
-                                }
-
-                        // Take the chosen currency and transforms it in RON
-                        if (convertField.getText().toString().length() > 0)
-                            number = Double.parseDouble(convertField.getText().toString());
-                        number_RON = number / currencyStructTable.get(unit_choice).DefaultUnit;
-
-                        // Set values in each currency TextView based on the value in RON
-                        for(Map.Entry<String,UnitStruct> entry: currencyStructTable.entrySet())
-                        {
-                            String aux = formatDecimals(entry.getValue().DefaultUnit * number_RON,"#.########");
-                            entry.getValue().Placeholder.setText(aux);
-                        }
-                    }
-                    else
-                        throw new Exception();
-                }
-                catch(IOException e) {
-                    Snackbar.make(currencyLayout, "Service unavailable!", Snackbar.LENGTH_LONG).show();
-                }
-                catch(Exception e) {
-                    Snackbar.make(currencyLayout, "You are offline!", Snackbar.LENGTH_LONG).show();
-                }
             }
         }).start();
     }
@@ -180,6 +140,7 @@ public class Currency extends UtilityTools {
         buttonOK = findViewById(R.id.buttonOK);
     }
 
+    @Override
     protected void setFunctionality() {
         // Set functionality
         //====================Main View====================
@@ -215,4 +176,52 @@ public class Currency extends UtilityTools {
         currencyStructTable.put(buttonUSD.getText().toString().substring(2,5),new UnitStruct(1,numberUSD));
         currencyStructTable.put(buttonGBP.getText().toString().substring(2,5),new UnitStruct(1,numberGBP));
     }
+
+    private void updateCurrencyTable() throws IOException {
+        Document doc = Jsoup.connect("https://www.bnr.ro/curs_mobil.aspx").get();   // IOException
+        Elements tds = doc.select("td");
+
+        // Update default currency unit
+        for (Element td : tds)
+            for(Map.Entry<String,UnitStruct> entry: currencyStructTable.entrySet())
+                if(td.text().contains(entry.getKey()))
+                {
+                    entry.getValue().DefaultUnit = Double.parseDouble(td.nextElementSibling().text());
+                    break;
+                }
+    }
+
+    private void tryConvert() {
+        try {
+
+            // Check connection
+            if(isInternetConnected(currencyLayout.getContext())) {
+                double number = 0;
+                double number_RON = 0;
+                String unit_choice = currencyDropdown.getText().toString().substring(2,5);
+
+                updateCurrencyTable();
+
+                // Take the chosen currency and transforms it in RON
+                if (convertField.getText().toString().length() > 0)
+                    number = Double.parseDouble(convertField.getText().toString());
+                number_RON = number / currencyStructTable.get(unit_choice).DefaultUnit;
+
+                // Set values in each currency TextView based on the value in RON
+                for(Map.Entry<String,UnitStruct> entry: currencyStructTable.entrySet()) {
+                    String aux = formatDecimals(entry.getValue().DefaultUnit * number_RON,"#.########");
+                    entry.getValue().Placeholder.setText(aux);
+                }
+            }
+            else
+                throw new Exception();  // Offline exception
+        }
+        catch(IOException e) {
+            Snackbar.make(currencyLayout, "Service unavailable!", Snackbar.LENGTH_LONG).show();
+        }
+        catch(Exception e) {
+            Snackbar.make(currencyLayout, "You are offline!", Snackbar.LENGTH_LONG).show();
+        }
+    }
+
 }

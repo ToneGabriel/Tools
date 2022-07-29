@@ -146,7 +146,7 @@ public class UtilityTools extends AppCompatActivity {
 
     protected void setFunctionality() {}
 
-    public class UnitStruct {
+    protected class UnitStruct {
 
         public double DefaultUnit;
         public TextView Placeholder;
